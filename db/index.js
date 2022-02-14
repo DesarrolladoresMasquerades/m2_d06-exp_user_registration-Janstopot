@@ -1,14 +1,12 @@
 const mongoose = require("mongoose");
 
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/express-basic-auth";
+
+const MONGO_URI = process.env.MONGODB_URI || "mongodb+srv://Janstopot:1qazxsw2@cluster0.yx19v.mongodb.net/express-basic-auth?retryWrites=true&w=majority"
+
+
 
 mongoose
-  .connect(MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true
-  })
+  .connect(MONGO_URI)
   .then((x) => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
   })
